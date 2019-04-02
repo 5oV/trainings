@@ -1,6 +1,8 @@
 #What base image we will use, for this case it will be small alpine linux image
 FROM ubuntu
 #Who is maintainer of this Dockerfile
+ENV HTTP_PROXY=http://172.16.3.3:3128
+ENV HTTPS_Proxy=http://172.16.3.3:3128
 MAINTAINER 5oV
 #Expose the port 80 -> on this port the container will listen
 EXPOSE 80
