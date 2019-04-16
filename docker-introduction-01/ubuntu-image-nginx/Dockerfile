@@ -8,10 +8,10 @@ MAINTAINER 5oV
 EXPOSE 80
 #Installation of required packages, run the following commands
 RUN apt-get update && apt-get install -y nginx vim net-tools; \
-    rm /usr/share/nginx/html/index.nginx-debian.html;
+    rm /var/www/html/index.nginx-debian.html;
 #Copy the current content from the current directory to destination /app
-COPY index.html /usr/share/nginx/html
+COPY index.html /var/www/html
 #Set our workdir as /app, in other words the directory the container should use when it starts up
-WORKDIR /usr/share/nginx/html
+WORKDIR /var/www/html
 #Run the command: start the nginx service
 CMD /etc/init.d/nginx start && bash
